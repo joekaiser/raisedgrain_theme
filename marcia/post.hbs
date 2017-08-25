@@ -1,0 +1,92 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+	the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+	{{#if feature_image}}
+		<section class="section-media section-blue" style="background-image:url('{{feature_image}}');"></section>
+	{{/if}}
+
+	<section class="section section-white">
+		<div class="container">
+			<!-- Blog -->
+			<div class="row">
+				<div class="col-md-8">
+					<!-- Item -->
+					<article class="blog-item-v2 blog-single {{post_class}}">
+						<header>
+						   <h1 class="blog-title">{{title}}</h1>
+						
+							<ul class="blog-details">
+								<li><i class="fa fa-user"></i> {{#author}}<a href="{{url}}" class="name">{{name}}</a>{{/author}}</li>
+								{{#if "tags"}}
+								<li><i class="fa fa-tags"></i> {{tags}}</li>
+								{{/if}}
+								{{#if featured}}
+								<li><i class="fa fa-star"></i> Featured</li>
+								{{/if}}
+								<li><i class="fa fa-calendar"></i> <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></li>
+							</ul>
+						</header>
+
+						{{content}}
+
+						{{!-- Email subscribe form at the bottom of the page --}}
+						{{#if @labs.subscribers}}
+							<section class="subscribe-form">
+								<h3 class="subscribe-form-title">Subscribe to {{@blog.title}}</h3>
+								<p>Get the latest posts delivered right to your inbox</p>
+								{{subscribe_form placeholder="youremail@example.com"}}
+							</section>
+						{{/if}}
+
+						<footer class="blog-footer post-footer">
+							{{> post-share}}
+
+							{{! Everything inside the #author tags pulls data from the author }}
+							{{!-- {{#author}}
+								<section class="author">
+									{{#if profile_image}}
+									<figure class="author-image">
+										<a class="img" href="{{url}}" style="background-image: url({{profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
+									</figure>
+									{{/if}}
+
+									<h4><a href="{{url}}">{{name}}</a></h4>
+
+									{{#if bio}}
+										<p>{{bio}}</p>
+									{{else}}
+										<p>Read <a href="{{url}}">more posts</a> by this author.</p>
+									{{/if}}
+									<div class="author-meta">
+										{{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+										{{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+									</div>
+								</section>
+							{{/author}} --}}
+
+							{{> prev-next}}
+
+							<!-- Comments -->
+							{{!-- <section class="section-comments">
+								<h5 class="text-bold text-uppercase">Leave a comment</h5>
+								{{> comment}}
+							</section> --}}
+							<!-- /Comments -->
+						</footer>
+					</article>
+					<!-- /Item -->
+				</div>
+
+				<!-- Sidebar -->
+				{{> sidebar }}
+				<!-- /Sidebar -->
+			</div>
+			<!-- /Blog -->
+		</div>
+	</section>
+	<!-- /Content -->
+{{/post}}

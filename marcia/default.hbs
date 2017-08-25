@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{{! Document Settings }}
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	
+	{{! Favicons }}
+	<link rel="apple-touch-icon" sizes="144x144" href="{{asset "images/apple-touch-icon-144x144.png"}}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{asset "images/apple-touch-icon-114x114.png"}}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{asset "images/apple-touch-icon-72x72.png"}}">
+	<link rel="apple-touch-icon" sizes="57x57" href="{{asset "images/apple-touch-icon-57x57.png"}}">
+	<link rel="shortcut icon" href="{{asset "images/favicon.png"}}" type="image/png">
+
+	{{! Fonts }}
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+	<link type="text/css" media="all" href="{{asset "fonts/font-awesome-4.6.3/css/font-awesome.min.css"}}" rel="stylesheet" />
+
+	{{! Styles'n'Scripts }}
+	<link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}"/>
+	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}"/>
+	<link rel="stylesheet" type="text/css" href="{{asset "css/color-2ba09a.css"}}" id="color-switcher"/>
+	<link rel="stylesheet" type="text/css" href="{{asset "css/animate.css"}}"/>
+	
+	<script src="{{asset "js/jquery-1.12.3.min.js"}}" type="text/javascript"></script> 
+	<script src="{{asset "js/modernizr.custom.js"}}" type="text/javascript"></script>
+	{{! inserting theme config partial}}
+	{{> config}}
+
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	{{! Ghost outputs important style and meta data with this tag }}
+	{{ghost_head}}
+</head>
+<body class="{{body_class}}">
+	{{> header}}
+	
+	<main id="content" class="content" role="main">
+		{{! Everything else gets inserted here }}
+		{{{body}}}
+	</main>
+
+	{{> widget-instagram}}
+
+	{{> footer}}
+
+	{{! Ghost outputs important scripts and data with this tag }}
+	{{ghost_foot}}
+
+	<script src="{{asset "js/plugins.js"}}" type="text/javascript"></script>
+	<script src="{{asset "js/mo.min.js"}}" type="text/javascript"></script>
+	<script src="{{asset "js/common.js"}}" type="text/javascript"></script>
+	<script src="{{asset "js/particles-white.init.js"}}" type="text/javascript"></script>
+	<script src="{{asset "js/mo.effect1.init.js"}}" type="text/javascript"></script>
+</body>
+</html>

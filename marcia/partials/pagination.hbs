@@ -1,0 +1,29 @@
+<!-- start pagination -->
+<div class="row pagination-wrap">
+    <div class="col-md-12">
+    	<ul class="pager clearfix" role="navigation">
+    		<li class="next{{#if next}}{{else}} disabled{{/if}}"><a href="{{page_url next}}">Next <i class="fa fa-angle-right fa-fw"></i></a></li>
+            <li class="previous{{#if prev}}{{else}} disabled{{/if}}"><a href="{{page_url prev}}"><i class="fa fa-angle-left fa-fw"></i> Previous</a></li>
+        </ul>
+        <div id="page-total" style="display:none;">{{pages}}</div>
+        <div id="page-current" style="display:none;">{{page}}</div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script>
+    $(document).ready(function(){
+        var tPages = parseInt($('#page-total').text());
+        var cPage = parseInt($('#page-current').text());
+
+        for (var i = 1; i <= tPages; i++) {
+	        if (i == cPage) {
+	        	$("<li class=\"digit\"><strong>" + i + "</strong></li>").insertBefore('.pager .previous');
+	            //nav.innerHTML = nav.innerHTML + "<li class=\"digit\"><strong>" + i + "</strong></li>";
+	        } else {
+	        	$("<li class=\"digit\"><a href=/page/" + i + ">" + i + "</a></li>").insertBefore('.pager .previous');
+	            //nav.innerHTML = nav.innerHTML + "<li class=\"digit\"><a href=/page/" + i + ">" + i + "</a></li>";
+	        }
+	    }
+    });
+</script>
+<!-- end pagination -->

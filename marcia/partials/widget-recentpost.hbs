@@ -1,0 +1,25 @@
+{{#get "posts" limit="4" as |recents|}}
+    {{#if recents}}
+    <!-- Recent Posts -->
+    <div class="sidebar-section">
+        <h5 class="sidebar-heading text-uppercase"><span>Recent Posts</span></h5>
+        <div class="sidebar-section-content">
+        {{#foreach recents}}
+        <div class="item-latest-post row">
+            {{#if feature_image}}
+            <div class="col-sm-4">
+                <img src="{{feature_image}}" alt="{{{title}}}" class="img-responsive">
+            </div>
+            {{/if}}
+            <div class="{{#if feature_image}}col-sm-8 {{else}}col-sm-12{{/if}}">
+                <h5 class="post-title"><a href="{{url}}">{{title}}</a></h5>
+                <p class="data-latest-post"><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        {{/foreach}}
+        </div>
+    </div>
+    <!-- /Recent Posts -->
+    {{/if}}
+{{/get}}

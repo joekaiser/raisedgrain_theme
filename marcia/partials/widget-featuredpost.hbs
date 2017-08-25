@@ -1,0 +1,25 @@
+{{#get "posts" filter="featured:true" limit="4" as |featured|}}
+    {{#if featured}}
+    <!-- Featured Posts -->
+    <div class="sidebar-section">
+        <h5 class="sidebar-heading text-uppercase"><span>Featured Posts</span></h5>
+        <div class="sidebar-section-content">
+        {{#foreach featured}}
+        <div class="item-latest-post row">
+            {{#if feature_image}}
+            <div class="col-sm-4">
+                <img src="{{feature_image}}" alt="{{{title}}}" class="img-responsive">
+            </div>
+            {{/if}}
+            <div class="{{#if feature_image}}col-sm-8 {{else}}col-sm-12{{/if}}">
+                <h5 class="post-title"><a href="{{url}}">{{title}}</a></h5>
+                <p class="data-latest-post"><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        {{/foreach}}
+        </div>
+    </div>
+    <!-- /Featured Posts -->
+    {{/if}}
+{{/get}}

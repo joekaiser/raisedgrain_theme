@@ -1,0 +1,39 @@
+{
+	"name": "marcia",
+	"description": "Masonry personal blogging theme for Ghost. Beautiful, minimal and responsive.",
+	"demo": "http://www.hmdthemes.com/demos/marcia",
+	"version": "1.1.0",
+	"engines": {
+		"ghost": ">=1.0.0"
+	},
+	"license": "MIT",
+	"screenshots": {
+		"desktop": "assets/screenshot-desktop.jpg",
+		"mobile": "assets/screenshot-mobile.jpg"
+	},
+	"author": {
+		"name": "Hatim Disawala",
+		"email": "info@hmdthemes.com",
+		"url": "http://www.hatimdisawala.com"
+	},
+	"gpm": {
+		"type": "theme",
+		"categories": [
+			"Minimal",
+			"Magazine",
+			"Blog",
+			"blogging",
+			"Grid",
+			"Masonry"
+		]
+	},
+	"keywords": [
+		"ghost",
+		"theme",
+		"marcia",
+		"masonry"
+	],
+	"config": {
+		"posts_per_page": 6
+	}
+}

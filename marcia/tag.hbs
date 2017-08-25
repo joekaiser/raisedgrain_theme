@@ -1,0 +1,30 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<section class="section-media cover section-blue" style="background-image:url('{{#if feature_image}}{{feature_image}}{{else}}{{#if @blog.cover_image}}{{@blog.cover_image}}{{/if}}{{/if}}');">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center image-title-container"> 
+				<h1 class="title-section">{{tag.name}}</h1>
+				<p class="title-section-details">
+					{{pagination.total}} posts<br />
+					{{#if tag.description}}
+						{{tag.description}}
+					{{/if}}
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section section-blog-grid">
+	<div class="container">
+		<div class="blog-grid">
+			{{! The tag below includes the post loop - partials/loop.hbs }}
+			{{> "loop"}}
+		</div>
+
+		{{! Previous/next page links - displayed on every page }}
+		{{pagination}}
+	</div>
+</section>

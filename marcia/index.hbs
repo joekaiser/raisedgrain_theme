@@ -1,0 +1,32 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<!-- Slider -->
+<section class="main-slider main-slider-image" style="background-image:url('{{#if @blog.cover_image}}{{@blog.cover_image}}{{/if}}');" id="particles-js">
+    <div class="container vertical-center">
+        <div class="row">
+            <div class="col-md-12 text-center" data-top="opacity:1; transform[swing]:scale(1)" data-top-bottom="opacity:0; transform[swing]:scale(0.7)" data-anchor-target=".main-slider">
+                <h1 class="heading text-white"> <img src="/assets/images/woodislife-svg-light.png" /></h1>
+                {{! <p class="slogan text-white">Welcome to Marcia. We are called to make their business best. Get started now, your way to success!</p> }}
+                <div class="clearfix"></div>
+                <div class="btn-group-slider">
+                    {{!-- <a class="btn btn-blue2" href="#">View Blog <i class="fa fa-angle-right animation-angle-right" aria-hidden="true"></i></a> --}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Slider -->
+
+{{! The main content area on the homepage }}
+<section class="section section-blog-grid">
+    <div class="container">
+        <div class="blog-grid">
+        {{! The tag below includes the post loop - partials/loop.hbs }}
+        {{> "loop"}}
+        </div>
+        
+        {{! Previous/next page links - displayed on every page }}
+        {{pagination}}
+    </div>
+</section>

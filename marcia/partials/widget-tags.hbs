@@ -1,0 +1,14 @@
+{{#if tags}}
+<!-- Tags -->
+<div class="sidebar-section">
+    <h5 class="sidebar-heading text-uppercase"><span>Tags</span></h5>
+    <div class="sidebar-section-content">
+    {{#foreach tags}}
+        <li>
+            <a href="{{url}}" title="{{name}}" class="tag-{{comment_id}}">{{name}}</a>
+        </li>  
+    {{/foreach}}
+    </div>
+</div>
+<!-- /Tags -->
+{{/if}}
