@@ -1,13 +1,13 @@
 {{!< default}}
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-<section class="section-media cover section-blue" style="background-image:url('{{#if feature_image}}{{feature_image}}{{else}}{{#if @blog.cover_image}}{{@blog.cover_image}}{{/if}}{{/if}}');">
+<section class="section-media cover section-blue" style="background-image:url('{{#if feature_image}}{{feature_image}}{{else}}{{@blog.cover_image}}{{/if}}');">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2 text-center image-title-container"> 
 				<h1 class="title-section">{{tag.name}}</h1>
 				<p class="title-section-details">
-					{{pagination.total}} posts<br />
+					{{!-- {{pagination.total}} posts<br /> --}}
 					{{#if tag.description}}
 						{{tag.description}}
 					{{/if}}
