@@ -2,7 +2,7 @@
 <footer class="base-footer">
     <div class="container container-footer">
         <div class="row">
-            <div class="col-sm-12 col-md-12">
+            <div class="col-sm-12 col-md-4">
                 <h4>About</h4>
                 <p>Raised Grain co. is family owned and based out of the Pacific Northwest. Everything I make is with turn of the century tools and techniques.</p>
                 {{!-- <ul class="list-unstyled no-list-style">
@@ -11,19 +11,19 @@
                     <li><span class="color-white">Email:</span> <span class="contact_email"></span></li>
                 </ul> --}}
             </div>
-            {{!-- <div class="col-sm-12  col-md-4">
-                <h4>Information</h4>
+            <div class="col-sm-12  col-md-4">
+                {{!-- <h4>(reSawn)</h4>
                 <ul class="list-unstyled">
                     {{#foreach @blog.navigation}}
                     <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{{label}}}</a></li>
                     {{/foreach}}
-                </ul>
-            </div> --}}
-            {{!-- <div class="col-sm-12 col-md-4">
-                <h4>Newsletter</h4>
-                {{> widget-footer-newsletter}}
-                <p>For our news update subscribe to our newsletter. You can unsubscribe anytime.</p>
-            </div> --}}
+                </ul> --}}
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <h4>(re)Sawn</h4>
+                {{!-- {{> widget-footer-newsletter}} --}}
+                <p>A newsletter for woodworkers. <a href="http://www.raisedgrainco.com/2017/10/22/resawn/">Find out more here.</a></p>
+            </div>
         </div>
     </div>
     <div class="container copy">
